@@ -1,0 +1,134 @@
+:root {
+  --hover-color: #444;
+}
+
+body {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #f8f8f8;
+  font: 1em Georgia, serif;
+
+  display: grid;
+  grid-template-areas:
+    "nav nav"
+    "side main"
+    ". main";
+
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 100px; /* fixme: responsive */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+.title-link {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sidebar-icon,
+.search-icon {
+  width: 2em;
+  padding: 1em;
+}
+
+.sidebar-icon:hover {
+  border-radius: 999px;
+  background: #f8f8f8;
+}
+
+.nav-top {
+  grid-area: nav;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  background: #fff;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* todo: use grid */
+  margin-right: 1em;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  align-items: center;
+  margin-left: 1em;
+}
+
+.login-button {
+  display: block;
+  padding: 0.5em;
+  text-transform: uppercase;
+  border-radius: 0.2em;
+}
+
+.login-button:hover {
+  background: #f8f8f8;
+}
+
+.nav-sidebar {
+  grid-area: side;
+}
+
+main {
+  grid-area: main;
+  padding-right: 4em;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+#recommendations {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+}
+
+.card {
+  /* max-width: 250px; */
+  background: #fff;
+}
+
+/* scale image on super big screens */
+.card img {
+  width: 100%;
+}
+
+.card .meta {
+  margin: 1em;
+}
+
+.author {
+  font-weight: 300;
+  font-size: 0.9em;
+}
+
+.author::before {
+  content: "by ";
+}
