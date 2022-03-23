@@ -4,28 +4,27 @@ function $(x) {
   return document.getElementById(x);
 }
 
-function escapeHTML(str) {
-  const p = document.createElement("p");
-  p.appendChild(document.createTextNode(str));
-  return p.innerHTML;
+function h(tag, attrs, children) {
+  const el = document.createElement(tag);
+  for (const attr in attrs || {}) {
+    el.setAttribute(attr, attrs[attr]);
+  }
+  el.append(...(children || []));
+  return el;
 }
 
-// TODO: Find shorter way to do this?
-function escapeATTR(str) {
-  const parent = document.createElement("div");
-  const p = document.createElement("p");
-  p.setAttribute("title", str);
-  parent.appendChild(p);
-  return parent.innerHTML.slice(10, -6);
-}
+const escapeHTML = (str) => h("p", {}, [str]).innerHTML;
+const escapeATTR = (str) =>
+  h("div", {}, [h("p", { title: str })]).innerHTML.slice(10, -6);
 
 // html template string with escaping
 function html(template, ...args) {
   const result = [template[0]];
   for (let i = 0; i < args.length; i++) {
     const str = args[i].toString();
+    // NOTE: only works for "${x}" NOT more complex exprs like "${x} ${y}"
     const insideAttr =
-      template[i].endsWith(`"`) && template[i + 1].endsWith(`"`);
+      template[i].endsWith(`"`) && template[i + 1].startsWith(`"`);
     const escaped = insideAttr ? escapeATTR(str) : escapeHTML(str);
     result.push(escaped);
     result.push(template[i + 1]);
