@@ -15,20 +15,28 @@ function escapeHTML(str) {
   return p.innerHTML;
 }
 
-// doesn't do anything, just for syntax highlighting
+// TODO: Find shorter way to do this?
+function escapeATTR(str) {
+  const parent = document.createElement("div");
+  const p = document.createElement("p");
+  p.setAttribute("title", str);
+  parent.appendChild(p);
+  return parent.innerHTML.slice(10, -6);
+}
+
+// html template string with escaping
 function html(template, ...args) {
-  // template.length = args.length + 1
   const result = [template[0]];
   for (let i = 0; i < args.length; i++) {
+    const str = args[i].toString();
+    const insideAttr =
+      template[i].endsWith(`"`) && template[i + 1].endsWith(`"`);
+    const escaped = insideAttr ? escapeATTR(str) : escapeHTML(str);
+    result.push(escaped);
     result.push(template[i + 1]);
-    // TODO: escapeHTML in body, escapeATTR in attr
-    result.push(args[i].toString());
   }
-  console.log(result.join(""));
   return result.join("");
 }
-// TODO: why does this work but other doesn't
-html = String.raw;
 
 // ========== code
 
