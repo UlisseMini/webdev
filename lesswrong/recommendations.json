@@ -1,18 +1,18 @@
 [
   {
-    "img": "http://localhost:8000/images/predictably-wrong.png",
+    "img": "images/predictably-wrong.png",
     "title": "Predictably Wrong",
     "author": "Eliezer Yudkowsky",
     "description": "This, the first book of \"Rationality: AI to Zombies\" (also known as \"The Sequences\"), begins with cognitive bias. The rest of the book won’t stick to just this topic; bad habits and bad ideas matter, even when they arise from our minds’ contents as opposed to our minds’ structure.\n\nIt is cognitive bias, however, that provides the clearest and most direct glimpse into the stuff of our psychology, into the shape of our heuristics and the logic of our limitations. It is with bias that we will begin."
   },
   {
-    "img": "http://localhost:8000/images/argument-and-analysis.jpg",
+    "img": "images/argument-and-analysis.jpg",
     "title": "Argument and Analysis",
     "author": "Scott Alexander",
     "description": "A sequence of essays by Scott Alexander on how arguments work, how to use them, and how to misuse them."
   },
   {
-    "img": "http://localhost:8000/images/the-methods-of-rationality.jpg",
+    "img": "images/the-methods-of-rationality.jpg",
     "title": "The Methods of Rationality",
     "author": "Eliezer Yudkowsky",
     "description": "Harry: You can't DO that! \n\nMinerva McGonagall: It's only a transfiguration; an animagus transformation, to be exact— \n\nHarry: You turned into a cat! A SMALL cat! You violated Conservation of Energy! That's not just an arbitrary rule, it's implied by the form of the quantum Hamiltonian! Rejecting it destroys unitarity and then you get FTL signaling! And cats are COMPLICATED! A human mind can't just visualize a whole cat's anatomy and, and all the cat biochemistry, and what about the neurology? How can you go on thinking using a cat-sized brain? \n\nMinerva: Magic. \n\nHarry: Magic isn't enough to do that! You'd have to be a god! \n\nMinerva: ... that's the first time I've been called that.\n\n—Harry's first encounter with magic"
