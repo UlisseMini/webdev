@@ -4,11 +4,6 @@ function $(x) {
   return document.getElementById(x);
 }
 
-const zip = (a, b) => {
-  if (a.length != b.length)
-    throw Error(`length mismatch ${a.length} != ${b.length}`);
-};
-
 function escapeHTML(str) {
   const p = document.createElement("p");
   p.appendChild(document.createTextNode(str));
